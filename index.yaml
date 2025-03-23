@@ -7,6 +7,8 @@ entries:
     description: A Helm chart for Kubernetes
     digest: c82427318426072f84bce4093d483922134e978ef5368743211206b410921667
     name: metallb-setup
+    sources:
+    - https://github.com/achrovisual/hl-k3s
     type: application
     urls:
     - https://github.com/achrovisual/hl-k3s/releases/download/metallb-setup-0.1.0/metallb-setup-0.1.0.tgz
@@ -18,6 +20,8 @@ entries:
     description: A Helm chart for Kubernetes
     digest: a91569aed9bbc28c28ddca88eef1c32a4846dc330558f2a184a6a1a85510cce2
     name: sample-app
+    sources:
+    - https://github.com/achrovisual/hl-k3s
     type: application
     urls:
     - https://github.com/achrovisual/hl-k3s/releases/download/sample-app-0.1.0/sample-app-0.1.0.tgz
