@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  metallb-setup:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-03-23T03:02:46.882465072Z"
+    description: A Helm chart for Kubernetes
+    digest: c82427318426072f84bce4093d483922134e978ef5368743211206b410921667
+    name: metallb-setup
+    type: application
+    urls:
+    - https://github.com/achrovisual/hl-k3s/releases/download/metallb-setup-0.1.0/metallb-setup-0.1.0.tgz
+    version: 0.1.0
+  sample-app:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-03-23T03:02:47.016404637Z"
+    description: A Helm chart for Kubernetes
+    digest: a91569aed9bbc28c28ddca88eef1c32a4846dc330558f2a184a6a1a85510cce2
+    name: sample-app
+    type: application
+    urls:
+    - https://github.com/achrovisual/hl-k3s/releases/download/sample-app-0.1.0/sample-app-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-03-23T03:02:47.016410308Z"
