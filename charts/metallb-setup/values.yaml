@@ -8,5 +8,5 @@ fullnameOverride: ""
 
 # This is for defining the address pool to be used by MetalLB.
 addressPool:
-  name: ""
+  name: "metallb-pool"
   ipRange: ""
