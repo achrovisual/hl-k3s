@@ -64,7 +64,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: sample.hl-k3s.com
+    - host: sample.hl-k3s.io
       paths:
         - path: /
           pathType: ImplementationSpecific
