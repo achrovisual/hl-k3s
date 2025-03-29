@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-cd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: hl-cu
+  source:
+    repoURL: https://github.com/achrovisual/hl-k3s.git
+    path: charts/argo-cd/
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo-cd
+  syncPolicy:
+    automated:
+      selfHeal: true
