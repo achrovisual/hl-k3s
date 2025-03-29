@@ -9,13 +9,9 @@ argo-cd:
   server:
     extraArgs:
       - --insecure
-    ingress:
-      enabled: true
-      hostname: lab.achrovisual.io
-      path: /argo-cd
-      annotations: {
-        traefik.ingress.kubernetes.io/router.entrypoints: web
-      }
+    service:
+      type: LoadBalancer
+      loadBalancerIP: "172.16.4.201"
   configs:
     params:
       server:
