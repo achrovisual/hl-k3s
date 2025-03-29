@@ -5,8 +5,6 @@ metadata:
   namespace: argo-cd
   labels:
     argocd.argoproj.io/secret-type: repository
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 stringData:
   url: https://github.com/achrovisual/hl-k3s
   project: hl-cu
