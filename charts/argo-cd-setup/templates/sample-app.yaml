@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: hl-cu
+  source:
+    repoURL: https://github.com/achrovisual/hl-k3s.git
+    path: charts/sample-app/
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: sample-app
+  syncPolicy:
+    automated:
+      selfHeal: true
