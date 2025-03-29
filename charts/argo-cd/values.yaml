@@ -12,7 +12,6 @@ argo-cd:
     ingress:
       enabled: true
       hostname: argo-cd.hl-k3s.io
-      https: true
   configs:
     params:
       server:
