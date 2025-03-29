@@ -12,4 +12,3 @@ argo-cd:
     ingress:
       enabled: true
       hostname: argo-cd.hl-k3s.io
-  nameOverride: argo-cd
