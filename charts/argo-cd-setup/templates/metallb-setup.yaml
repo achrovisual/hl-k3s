@@ -8,7 +8,7 @@ spec:
   project: hl-cu
   source:
     repoURL: https://github.com/achrovisual/hl-k3s
-    path: charts/metallb-setup/
+    path: charts/metallb-setup
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
