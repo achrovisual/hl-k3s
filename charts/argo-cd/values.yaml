@@ -11,8 +11,8 @@ argo-cd:
       - --insecure
     ingress:
       enabled: true
-      hostname: argo-cd.hl-k3s.io
-      loadBalancerIP: "172.16.4.211"
+      hostname: lab.achrovisual.io
+      path: /argo-cd
   configs:
     params:
       server:
