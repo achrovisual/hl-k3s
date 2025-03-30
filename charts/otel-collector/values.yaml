@@ -179,7 +179,7 @@ opentelemetry-collector:
           - otlphttp/loki
           processors:
           - k8sattributes
-          - filter/namespaces
+          # - filter/namespaces
           - memory_limiter
           - batch
           receivers:
