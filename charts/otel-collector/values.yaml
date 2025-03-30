@@ -3,6 +3,9 @@ opentelemetry-collector:
   mode: daemonset
   image:
     repository: "otel/opentelemetry-collector-contrib"
+  preset:
+    logsCollection:
+      enabled: true
   clusterRole:
     create: true
     annotations: {}
@@ -20,7 +23,7 @@ opentelemetry-collector:
     clusterRoleBinding:
       annotations: {}
       name: ""
-  alternateConfig:
+  config:
     exporters:
       debug: {}
       otlphttp/loki:
