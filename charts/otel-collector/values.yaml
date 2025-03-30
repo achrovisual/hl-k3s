@@ -6,23 +6,23 @@ opentelemetry-collector:
   preset:
     logsCollection:
       enabled: true
-  clusterRole:
-    create: true
-    annotations: {}
-    name: ""
-    rules: 
-    - apiGroups:
-      - '*'
-      resources:
-      - '*'
-      verbs:
-      - 'get'
-      - 'list'
-      - 'watch'
+  # clusterRole:
+  #   create: true
+  #   annotations: {}
+  #   name: ""
+  #   rules: 
+  #   - apiGroups:
+  #     - '*'
+  #     resources:
+  #     - '*'
+  #     verbs:
+  #     - 'get'
+  #     - 'list'
+  #     - 'watch'
 
-    clusterRoleBinding:
-      annotations: {}
-      name: ""
+  #   clusterRoleBinding:
+  #     annotations: {}
+  #     name: ""
   config:
     exporters:
       debug: {}
