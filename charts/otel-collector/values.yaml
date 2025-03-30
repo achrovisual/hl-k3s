@@ -3,6 +3,9 @@ opentelemetry-collector:
   mode: daemonset
   image:
     repository: "otel/opentelemetry-collector-contrib"
+  presets:
+    logsCollection:
+      enabled: true
   config:
     exporters:
       debug: {}
