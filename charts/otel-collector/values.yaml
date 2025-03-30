@@ -7,7 +7,7 @@ opentelemetry-collector:
     create: true
     annotations: {}
     name: ""
-    rules: []
+    rules: 
     - apiGroups:
       - ''
       resources:
