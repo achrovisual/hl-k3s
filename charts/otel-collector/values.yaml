@@ -3,26 +3,26 @@ opentelemetry-collector:
   mode: daemonset
   image:
     repository: "otel/opentelemetry-collector-contrib"
-  preset:
+  presets:
     logsCollection:
       enabled: true
-  # clusterRole:
-  #   create: true
-  #   annotations: {}
-  #   name: ""
-  #   rules: 
-  #   - apiGroups:
-  #     - '*'
-  #     resources:
-  #     - '*'
-  #     verbs:
-  #     - 'get'
-  #     - 'list'
-  #     - 'watch'
+  clusterRole:
+    create: true
+    annotations: {}
+    name: ""
+    rules: 
+    - apiGroups:
+      - '*'
+      resources:
+      - '*'
+      verbs:
+      - 'get'
+      - 'list'
+      - 'watch'
 
-  #   clusterRoleBinding:
-  #     annotations: {}
-  #     name: ""
+    clusterRoleBinding:
+      annotations: {}
+      name: ""
   config:
     exporters:
       debug: {}
