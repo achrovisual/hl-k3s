@@ -9,7 +9,7 @@ opentelemetry-collector:
     name: ""
     rules: 
     - apiGroups:
-      - '*'
+      - ''
       resources:
       - '*'
       verbs:
@@ -61,7 +61,7 @@ opentelemetry-collector:
         check_interval: 5s
         limit_percentage: 80
         spike_limit_percentage: 25
-      filter/namespaces:
+      filter/annotation:
         error_mode: ignore
         logs:
           include:
@@ -179,32 +179,32 @@ opentelemetry-collector:
           - otlphttp/loki
           processors:
           - k8sattributes
-          # - filter/namespaces
+          - filter/annotation
           - memory_limiter
           - batch
           receivers:
           - otlp
           - filelog
-        metrics:
-          exporters:
-          - debug
-          processors:
-          - k8sattributes
-          - memory_limiter
-          - batch
-          receivers:
-          - otlp
-          - prometheus
-          - k8s_cluster
-        traces:
-          exporters:
-          - debug
-          processors:
-          - k8sattributes
-          - memory_limiter
-          - batch
-          receivers:
-          - otlp
+        # metrics:
+        #   exporters:
+        #   - debug
+        #   processors:
+        #   - k8sattributes
+        #   - memory_limiter
+        #   - batch
+        #   receivers:
+        #   - otlp
+        #   - prometheus
+        #   - k8s_cluster
+        # traces:
+        #   exporters:
+        #   - debug
+        #   processors:
+        #   - k8sattributes
+        #   - memory_limiter
+        #   - batch
+        #   receivers:
+        #   - otlp
       telemetry:
         metrics:
           address: ${env:MY_POD_IP}:8888
