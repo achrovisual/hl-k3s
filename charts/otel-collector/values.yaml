@@ -3,9 +3,6 @@ opentelemetry-collector:
   mode: daemonset
   image:
     repository: "otel/opentelemetry-collector-contrib"
-  presets:
-    logsCollection:
-      enabled: true
   clusterRole:
     create: true
     annotations: {}
@@ -23,7 +20,15 @@ opentelemetry-collector:
     clusterRoleBinding:
       annotations: {}
       name: ""
-  config:
+  extraVolumes:
+    - name: varlogpods
+      hostPath:
+        path: /var/log/pods
+  extraVolumeMounts:
+    - name: varlogpods
+      mountPath: /var/log/pods
+      readOnly: true
+  alternateConfig:
     exporters:
       debug: {}
       otlphttp/loki:
