@@ -6,6 +6,8 @@ opentelemetry-collector:
   presets:
     logsCollection:
       enabled: true
+    kubernetesAttributes:
+      enabled: true
   config:
     exporters:
       debug: {}
