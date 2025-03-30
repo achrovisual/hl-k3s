@@ -148,6 +148,11 @@ opentelemetry-collector:
           - type: move
             from: attributes.uid
             to: resource["k8s.pod.uid"]
+        retry_on_failure:
+          enabled: true
+          initial_interval: 1s
+          max_interval:  30s
+          max_elapsed_time: 5m
       k8s_cluster:
         collection_interval: 10s
       otlp:
