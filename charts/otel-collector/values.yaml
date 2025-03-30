@@ -20,7 +20,7 @@ opentelemetry-collector:
     clusterRoleBinding:
       annotations: {}
       name: ""
-  config:
+  alternateConfig:
     exporters:
       debug: {}
       otlphttp/loki:
