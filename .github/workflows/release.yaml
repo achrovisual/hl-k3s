@@ -32,6 +32,7 @@ jobs:
         run: |
           helm repo add argo-helm https://argoproj.github.io/argo-helm
           helm repo add metallb https://metallb.github.io/metallb
+          helm repo add opentelemetry-helm-charts https://open-telemetry.github.io/opentelemetry-helm-charts
 
       - name: Set Target Charts
         run: echo "TARGET_CHARTS=base-template" >> $GITHUB_ENV
