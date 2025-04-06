@@ -53,6 +53,17 @@ entries:
     version: 0.1.0
   hl-test:
   - apiVersion: v2
+    created: "2025-04-06T11:33:56.51926553Z"
+    dependencies:
+    - name: base-template
+      repository: https://achrovisual.github.io/hl-k3s/
+      version: 0.2.1
+    digest: 700651314d560a47637ed15157b09a32a7186611da34122fe4a1f03c5b7a081f
+    name: hl-test
+    urls:
+    - https://github.com/achrovisual/hl-k3s/releases/download/hl-test-1.1.0/hl-test-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
     created: "2025-04-06T02:24:48.10789695Z"
     dependencies:
     - name: base-template
@@ -113,4 +124,4 @@ entries:
     urls:
     - https://github.com/achrovisual/hl-k3s/releases/download/sample-app-0.1.0/sample-app-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-06T11:32:13.226770687Z"
+generated: "2025-04-06T11:33:56.519278494Z"
