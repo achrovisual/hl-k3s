@@ -1,7 +1,0 @@
-apiVersion: v2
-name: hl-test
-version: 1.0.0
-dependencies:
-  - name: base-template
-    version: 1.0.0
-    repository: https://github.com/achrovisual/hl-k3s
