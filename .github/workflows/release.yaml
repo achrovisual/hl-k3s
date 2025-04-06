@@ -31,20 +31,10 @@ jobs:
       - name: Set Target Charts
         run: echo "TARGET_CHARTS=base-template" >> $GITHUB_ENV
 
-      - name: Create Temporary Chart Directory
-        run: mkdir temp_charts
-
-      - name: Copy Target Charts to Temp Directory
-        run: |
-          TARGET_CHARTS="${{ env.TARGET_CHARTS }}"
-          for chart in $TARGET_CHARTS; do
-            cp -r "charts/$chart" "temp_charts/$chart"
-          done
-
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.7.0
         with:
-          charts_dir: temp_charts
+          charts_dir: charts
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           CR_GENERATE_RELEASE_NOTES: true
