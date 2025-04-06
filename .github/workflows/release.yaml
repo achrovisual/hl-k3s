@@ -28,6 +28,10 @@ jobs:
         with:
           version: v3.9.0
 
+      - name: Add Helm Repositories
+        run: |
+          helm repo add argo-helm https://argoproj.github.io/argo-helm
+
       - name: Set Target Charts
         run: echo "TARGET_CHARTS=base-template" >> $GITHUB_ENV
 
