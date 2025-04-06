@@ -46,12 +46,24 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Push charts to GHCR
+      - name: Push Target Charts to GHCR
         run: |
           shopt -s nullglob
+          TARGET_CHARTS="${{ env.TARGET_CHARTS }}"
           for pkg in .cr-release-packages/*; do
-            if [ -z "${pkg:-}" ]; then
-              break
+            chart_name=$(basename "$pkg")
+            if [[ ",${TARGET_CHARTS}," == *",$chart_name,"* ]]; then
+              helm push "${pkg}" "oci://ghcr.io/${GITHUB_REPOSITORY}"
             fi
-            helm push "${pkg}" "oci://ghcr.io/${GITHUB_REPOSITORY}"
+          done
+
+      - name: Cleanup Non-Target Packages
+        run: |
+          shopt -s nullglob
+          TARGET_CHARTS="${{ env.TARGET_CHARTS }}"
+          for pkg in .cr-release-packages/*; do
+            chart_name=$(basename "$pkg")
+            if [[ ",${TARGET_CHARTS}," != *",$chart_name,"* ]]; then
+              rm -rf "$pkg"
+            fi
           done
