@@ -13,11 +13,11 @@ spec:
       {{- include "base-template.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
       annotations:
         logging/enabled: 'true'
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        {{- with .Values.podAnnotations }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
       labels:
         {{- include "base-template.labels" . | nindent 8 }}
         {{- with .Values.podLabels }}
