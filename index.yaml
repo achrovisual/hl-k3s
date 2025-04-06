@@ -31,6 +31,18 @@ entries:
     urls:
     - https://github.com/achrovisual/hl-k3s/releases/download/base-template-0.1.0/base-template-0.1.0.tgz
     version: 0.1.0
+  hl-test:
+  - apiVersion: v2
+    created: "2025-04-06T02:24:48.10789695Z"
+    dependencies:
+    - name: base-template
+      repository: https://achrovisual.github.io/hl-k3s/
+      version: 0.1.0
+    digest: a8ff88eba9720f07002bc52363941426beb88727c2042a303ffaf6d02bdabec4
+    name: hl-test
+    urls:
+    - https://github.com/achrovisual/hl-k3s/releases/download/hl-test-1.0.0/hl-test-1.0.0.tgz
+    version: 1.0.0
   metallb:
   - apiVersion: v2
     created: "2025-04-06T02:14:48.798101927Z"
@@ -81,4 +93,4 @@ entries:
     urls:
     - https://github.com/achrovisual/hl-k3s/releases/download/sample-app-0.1.0/sample-app-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-06T02:14:49.206315667Z"
+generated: "2025-04-06T02:24:48.107902119Z"
