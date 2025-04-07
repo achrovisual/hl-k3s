@@ -1,6 +1,6 @@
 dependencies:
 - name: base-template
   repository: file://../base-template
-  version: 0.2.1
-digest: sha256:70d0302c41731421bc2c9954bf464c92f09ff8010431acca4078072cc2f9b261
-generated: "2025-04-07T12:43:15.081407823Z"
+  version: 0.3.0
+digest: sha256:3811e91a4be098a77c6c1c47a684577b0abdea6c1b82da9b59ff9502477f3522
+generated: "2025-04-07T12:49:59.480378152Z"
