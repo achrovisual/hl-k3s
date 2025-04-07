@@ -14,7 +14,9 @@ spec:
   template:
     metadata:
       annotations:
+        {{- if not .Values.annotations.logging.enabled }}
         logging/enabled: 'true'
+        {{- end }}
         {{- with .Values.podAnnotations }}
           {{- toYaml . | nindent 8 }}
         {{- end }}
