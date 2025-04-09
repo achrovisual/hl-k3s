@@ -8,7 +8,7 @@ spec:
   project: hl-cu
   source:
     repoURL: https://github.com/achrovisual/hl-k3s
-    path: charts/argo-cd-setup
+    path: charts/private/argo-cd-setup
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
