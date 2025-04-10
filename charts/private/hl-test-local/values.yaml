@@ -1,3 +1,4 @@
 base-template:
-  logging:
-    enabled: true
+  monitoring:
+    logs:
+      enabled: true
