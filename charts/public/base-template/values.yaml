@@ -122,5 +122,6 @@ tolerations: []
 
 affinity: {}
 
-logging:
-  enabled: false
+monitoring:
+  logs:
+    enabled: false

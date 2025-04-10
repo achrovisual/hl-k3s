@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       annotations:
-        {{- if .Values.logging.enabled }}
+        {{- if .Values.monitoring.logs.enabled }}
         logging/enabled: 'true'
         {{- end }}
         {{- with .Values.podAnnotations }}
