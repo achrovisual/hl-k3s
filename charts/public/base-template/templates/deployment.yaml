@@ -14,8 +14,8 @@ spec:
   template:
     metadata:
       annotations:
-        {{- if .Values.logging.enabled }}
-        logging/enabled: 'true'
+        {{- if .Values.monitoring.logs.enabled }}
+        lgtm.achrovisual.io/logs: 'true'
         {{- end }}
         {{- with .Values.podAnnotations }}
           {{- toYaml . | nindent 8 }}
