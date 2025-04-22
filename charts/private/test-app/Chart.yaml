@@ -1,7 +1,0 @@
-apiVersion: v2
-name: test-app
-version: 0.1.0
-dependencies:
-  - name: base-template
-    version: 0.3.3
-    repository: file://../../public/base-template
