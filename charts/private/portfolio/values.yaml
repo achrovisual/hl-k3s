@@ -4,5 +4,5 @@ base-template:
       enabled: true
   image:
     repository: ghcr.io/achrovisual/portfolio
-    tag: latest             
+    tag: sha-c9f9258f4c4132e64f8e8f1e143a4ad0483391f2             
     pullPolicy: IfNotPresent 
