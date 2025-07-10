@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: portfolio
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: hl-cu
   source:
@@ -18,4 +18,4 @@ spec:
       selfHeal: true
       prune: true
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
