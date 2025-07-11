@@ -9,3 +9,9 @@ base-template:
   service:
     port: 3000
     type: LoadBalancer
+  secretEnv:
+    enabled: true
+    name: github-credentials
+    mappings:
+      GH_API_TOKEN: GH_API_TOKEN
+      GITHUB_USERNAME: GITHUB_USERNAME
