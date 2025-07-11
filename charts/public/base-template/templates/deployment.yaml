@@ -45,22 +45,24 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          {{- if or .Values.env (and .Values.secretEnv .Values.secretEnv.enabled) }}
           env:
             {{- if .Values.env }}
-              {{- range $key, $value := .Values.env }}
+            {{- range $key, $value := .Values.env }}
             - name: {{ $key | quote }}
               value: {{ $value | quote }}
-              {{- end }}
+            {{- end }}
             {{- end }}
             {{- if and .Values.secretEnv .Values.secretEnv.enabled }}
-              {{- range $envVarName, $secretKey := .Values.secretEnv.mappings }}
+            {{- range $envVarName, $secretKey := .Values.secretEnv.mappings }}
             - name: {{ $envVarName | quote }}
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.secretEnv.name }}
+                  name: {{ .Values.secretEnv.name | quote }}
                   key: {{ $secretKey | quote }}
-              {{- end }}
             {{- end }}
+            {{- end }}
+          {{- end }}
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
