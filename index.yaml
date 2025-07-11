@@ -3,6 +3,16 @@ entries:
   base-template:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-07-11T15:42:42.967184815Z"
+    description: A Helm chart for Kubernetes
+    digest: 1325d6f6ed90212380989b22ffa560ddf9e0003ff8675ee5c7cfc638ea142d00
+    name: base-template
+    type: application
+    urls:
+    - https://github.com/achrovisual/hl-k3s/releases/download/base-template-0.4.0/base-template-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-04-26T05:58:52.223676964Z"
     description: A Helm chart for Kubernetes
     digest: f83a43ae3895f84fbe97fc22401cf7301484c6e44a2b822f6d484537717b812f
@@ -81,4 +91,4 @@ entries:
     urls:
     - https://github.com/achrovisual/hl-k3s/releases/download/base-template-0.1.0/base-template-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-26T05:58:52.22370705Z"
+generated: "2025-07-11T15:42:42.967226914Z"
