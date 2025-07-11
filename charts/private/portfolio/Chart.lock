@@ -1,6 +1,0 @@
-dependencies:
-- name: base-template
-  repository: https://achrovisual.github.io/hl-k3s/
-  version: 0.3.6
-digest: sha256:9145414a874228cdab7bff19ffb821049b99f92d492e8c36080f4af59bad0330
-generated: "2025-07-10T19:26:19.957518352+08:00"
