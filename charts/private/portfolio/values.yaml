@@ -15,4 +15,4 @@ base-template:
       name: github-credentials
       mappings:
         GH_API_TOKEN: GH_API_TOKEN
-        GITHUB_USERNAME: GITHUB_USERNAME
+        GH_USERNAME: GH_USERNAME
