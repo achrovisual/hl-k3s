@@ -45,20 +45,21 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          {{- if or .Values.env (and .Values.secretEnv .Values.secretEnv.enabled) }}
+          {{- $env := .Values.env }}
+          {{- if or $env.plainEnv (and $env.secretEnv $env.secretEnv.enabled) }}
           env:
-            {{- if .Values.env }}
-            {{- range $key, $value := .Values.env }}
+            {{- if $env.plainEnv }}
+            {{- range $key, $value := $env.plainEnv }}
             - name: {{ $key | quote }}
               value: {{ $value | quote }}
             {{- end }}
             {{- end }}
-            {{- if and .Values.secretEnv .Values.secretEnv.enabled }}
-            {{- range $envVarName, $secretKey := .Values.secretEnv.mappings }}
+            {{- if and $env.secretEnv $env.secretEnv.enabled }}
+            {{- range $envVarName, $secretKey := $env.secretEnv.mappings }}
             - name: {{ $envVarName | quote }}
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.secretEnv.name | quote }}
+                  name: {{ $env.secretEnv.name | quote }}
                   key: {{ $secretKey | quote }}
             {{- end }}
             {{- end }}
