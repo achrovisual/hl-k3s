@@ -3,5 +3,5 @@ name: portfolio
 version: 0.1.0
 dependencies:
   - name: base-template
-    version: 0.4.0
+    version: 0.4.1
     repository: https://achrovisual.github.io/hl-k3s/
