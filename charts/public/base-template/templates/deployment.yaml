@@ -46,7 +46,7 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           {{- $env := .Values.env }}
-          {{- if or $env (and $env.secretEnv $env.secretEnv.enabled) }}
+          {{- if or $env.plainEnv (and $env.secretEnv $env.secretEnv.enabled) }}
           env:
             {{- if $env.plainEnv }}
             {{- range $key, $value := $env.plainEnv }}
