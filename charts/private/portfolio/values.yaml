@@ -4,7 +4,7 @@ base-template:
       enabled: true
   image:
     repository: ghcr.io/achrovisual/portfolio
-    tag: sha-ec295c4864354ceebd3a090ff9604a185f61b428
+    tag: sha-cd48a6964217498882a07dcf28fdcaf424e585f9
     pullPolicy: IfNotPresent
   service:
     port: 3000
@@ -16,3 +16,18 @@ base-template:
       mappings:
         GH_API_TOKEN: GH_API_TOKEN
         GH_USERNAME: GH_USERNAME
+  probes:
+    enabled: true
+    liveness:
+      path: /api/status
+      initialDelaySeconds: 20
+      periodSeconds: 300
+      timeoutSeconds: 5
+      failureThreshold: 3
+    readiness:
+      path: /api/status
+      port: 3000
+      initialDelaySeconds: 5
+      periodSeconds: 300
+      timeoutSeconds: 3
+      failureThreshold: 1
