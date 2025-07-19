@@ -16,18 +16,19 @@ base-template:
       mappings:
         GH_API_TOKEN: GH_API_TOKEN
         GH_USERNAME: GH_USERNAME
-  probes:
-    enabled: true
-    liveness:
-      path: /api/status
-      initialDelaySeconds: 20
-      periodSeconds: 300
-      timeoutSeconds: 5
-      failureThreshold: 3
-    readiness:
+  livenessProbe:
+    httpGet:
       path: /api/status
       port: 3000
-      initialDelaySeconds: 5
-      periodSeconds: 300
-      timeoutSeconds: 3
-      failureThreshold: 1
+    initialDelaySeconds: 20
+    periodSeconds: 300
+    timeoutSeconds: 5
+    failureThreshold: 3
+  readinessProbe:
+    httpGet:
+      path: /api/status
+      port: 3000
+    initialDelaySeconds: 5
+    periodSeconds: 300
+    timeoutSeconds: 3
+    failureThreshold: 1
