@@ -52,7 +52,7 @@ jobs:
         run: |
           CHANGELOG_FILE="charts/public/base-template/CHANGELOG.md"
           RELEASE_NOTES_FILE="release_notes.txt"
-
+          
           if [ ! -f "$CHANGELOG_FILE" ]; then
             echo "::error file=$CHANGELOG_FILE::CHANGELOG.md not found at $CHANGELOG_FILE"
             exit 1
@@ -61,7 +61,7 @@ jobs:
           CHANGELOG_CONTENT=$(awk -v version="${{ env.CHART_VERSION }}" '
             /^## \[/ {
               if (found_version) { exit }
-              if ($0 ~ "## \\[" version "\\]") {
+              if ($0 ~ "^## \\[" version "\\]($| - .*)") {
                 found_version = 1
                 next
               }
