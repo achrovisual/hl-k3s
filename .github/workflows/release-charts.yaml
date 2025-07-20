@@ -51,7 +51,7 @@ jobs:
         id: extract_changelog
         run: |
           CHANGELOG_FILE="charts/public/base-template/CHANGELOG.md"
-          
+
           if [ ! -f "$CHANGELOG_FILE" ]; then
             echo "::error file=$CHANGELOG_FILE::CHANGELOG.md not found at $CHANGELOG_FILE"
             exit 1
