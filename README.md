@@ -37,5 +37,48 @@ This repository is a curated collection of **Helm charts** for deploying and man
 
 ---
 
+## ⚙️ Getting Started
+
+This section outlines the steps to set up your K3s environment and deploy applications using the charts in this repository.
+
+### Prerequisites
+
+Before you begin, ensure you have:
+
+-   A machine ready to host K3s (e.g., a Linux VM or Raspberry Pi).
+-   Basic Linux command-line knowledge.
+-   `sudo` access on the machine for installation steps.
+
+### Automated Setup
+
+For a quick and automated setup of your K3s server, along with Kubeconfig setup, Helm installation, adding Helm repositories, cloning this Git repository, and installing Argo CD with initial applications, use the `setup.sh` script located in the `hl-scripts` repository.
+
+**Note:** This script is designed for a fresh K3s master node and assumes a specified user.
+
+1.  **Clone the `hl-scripts` repository:**
+    ```bash
+    $ git clone [https://github.com/achrovisual/hl-scripts.git](https://github.com/achrovisual/hl-scripts.git)
+    ```
+
+2.  **Navigate to the script directory:**
+    ```bash
+    $ cd hl-scripts/k3s/server/
+    ```
+
+3.  **Run the setup script:**
+    ```bash
+    $ ./setup.sh <your_username>
+    ```
+    Replace `<your_username>` with an existing user on your K3s master node (e.g., `alice`). This script will guide you through the automated setup process.
+
+---
+
+### Using the Helm Charts (After Setup)
+
+Once your environment is set up by the automated script (which includes Helm and Argo CD installations), you can proceed to use the Helm charts for your deployments.
+
+---
+
 ## 🚀 Deployment
+
 These Helm charts are designed to facilitate the deployment of various applications and services into your K3s cluster. By maintaining these charts in a version-controlled repository, especially when coupled with GitOps tools like Argo CD, you can achieve consistent, automated, and auditable deployments for your home lab infrastructure and personal development sandbox. This approach embodies the GitOps philosophy, where your Git repository is the single source of truth for your cluster's desired state.
