@@ -1,5 +1,3 @@
 cert-manager:
   namespace: cert-manager
   installCRDs: true
-  featureGates:
-    - GatewayAPI=true
