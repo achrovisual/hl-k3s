@@ -5,7 +5,7 @@ ingress-nginx:
       default: true
     ingressClass: nginx
     service:
-      type: NodePort
+      type: LoadBalancer
     admissionWebhooks:
       patch:
         nodeSelector:
