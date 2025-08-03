@@ -1,0 +1,14 @@
+ingress-nginx:
+  namespaceOverride: nginx
+  controller:
+    ingressClassResource:
+      default: true
+    ingressClass: nginx
+    service:
+      type: NodePort
+    admissionWebhooks:
+      patch:
+        nodeSelector:
+          kubernetes.io/os: linux
+  gateway:
+    enabled: true
