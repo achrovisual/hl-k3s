@@ -12,7 +12,7 @@ spec:
         - argo-cd.achrovisual.net
       secretName: argo-cd-server-tls-secret
   rules:
-    - host: argo-cd.hl1.achrovisual.net
+    - host: argo-cd.achrovisual.net
       http:
         paths:
           - path: /
