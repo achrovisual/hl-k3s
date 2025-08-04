@@ -4,12 +4,12 @@ metadata:
   name: argo-cd-server-ingress
   namespace: argo-cd
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/cluster-issuer: lets-encrypt-prod
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - argo-cd.hl1.achrovisual.net
+        - argo-cd.achrovisual.net
       secretName: argo-cd-server-tls-secret
   rules:
     - host: argo-cd.hl1.achrovisual.net
