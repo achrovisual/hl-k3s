@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - portfolio.achrovisual.net
-      secretName: argo-cd-server-tls-secret
+      secretName: portfolio-tls-secret
   rules:
     - host: portfolio.achrovisual.net
       http:
