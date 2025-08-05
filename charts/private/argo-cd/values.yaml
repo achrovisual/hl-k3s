@@ -10,7 +10,7 @@ argo-cd:
     extraArgs:
       - --insecure
     service:
-      type: NodePort
+      type: ClusterIP
   configs:
     params:
       server:
