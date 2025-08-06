@@ -44,14 +44,8 @@ $ kubectl apply -f ingress.yaml
 **Verification:**
 Check the status of the automatically created `Certificate` and the resulting `Secret` with these commands. The `READY` status should become `True` once the certificate is issued.
 
-## Check the status of the Certificate resource.
+## Check the status of the Certificate Resource
 
 ```bash
 $ kubectl get certificate -n your-app-namespace
-```
-
-## Check the status of the Certificate resource.
-
-```bash
-$ kubectl get secret your-app-tls-secret -n your-app-namespace
 ```
