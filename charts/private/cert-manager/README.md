@@ -10,7 +10,11 @@ Before you begin, ensure you have the following:
 
 * An **Ingress Controller** (e.g., NGINX Ingress Controller) installed and configured.
 
-* The **DNS records** for your domain (`your.domain.com`) pointing to your Ingress Controller's IP address.
+* **DNS records** for your domain (`your.domain.com`). The required records depend on the ACME challenge type you use:
+  * For **HTTP-01** challenges, you need **A** or **AAAA** records pointing to your Ingress Controller's IP address.
+  * For **DNS-01** challenges, no public **A** or **AAAA** records are required. You will need a Kubernetes secret containing a Cloudflare API token.
+
+* A **Cloudflare API-token secret** with the necessary RBAC permissions for DNS-01 challenges. This secret must contain a token with **Zone > DNS > Edit** and **Zone > Zone > Read** permissions.
 
 * Your `clusterissuer.yaml` and `ingress.yaml` files are ready.
 
