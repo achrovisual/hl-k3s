@@ -49,3 +49,9 @@ Check the status of the automatically created `Certificate` and the resulting `S
 ```bash
 $ kubectl get certificate -n your-app-namespace
 ```
+
+## Check the status of the TLS Secret
+
+```bash
+$ kubectl get secret your-app-tls-secret -n your-app-namespace
+```
