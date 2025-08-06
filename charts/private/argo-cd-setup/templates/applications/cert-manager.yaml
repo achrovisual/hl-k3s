@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/achrovisual/hl-k3s
     path: charts/private/cert-manager
-    targetRevision: feature/set-up-tls
+    targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
     namespace: cert-manager
