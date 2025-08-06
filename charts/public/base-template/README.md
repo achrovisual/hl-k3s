@@ -25,7 +25,7 @@ This Helm chart offers a flexible base for deploying Kubernetes applications, si
 To install the `base-template` chart with release name `my-app`:
 
 ```
-$ helm install my-app ./base-template
+helm install my-app ./base-template
 ```
 
 ## Configuration
