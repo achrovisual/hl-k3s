@@ -57,17 +57,17 @@ For a quick and automated setup of your K3s server, along with Kubeconfig setup,
 
 1.  **Clone the `hl-scripts` repository:**
     ```bash
-    $ git clone [https://github.com/achrovisual/hl-scripts.git](https://github.com/achrovisual/hl-scripts.git)
+    git clone [https://github.com/achrovisual/hl-scripts.git](https://github.com/achrovisual/hl-scripts.git)
     ```
 
 2.  **Navigate to the script directory:**
     ```bash
-    $ cd hl-scripts/k3s/server/
+    cd hl-scripts/k3s/server/
     ```
 
 3.  **Run the setup script:**
     ```bash
-    $ ./setup.sh <your_username>
+    ./setup.sh <your_username>
     ```
     Replace `<your_username>` with an existing user on your K3s master node (e.g., `alice`). This script will guide you through the automated setup process.
 

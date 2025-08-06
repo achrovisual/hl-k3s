@@ -10,8 +10,7 @@ argo-cd:
     extraArgs:
       - --insecure
     service:
-      type: LoadBalancer
-      loadBalancerIP: "172.16.4.211"
+      type: ClusterIP
   configs:
     params:
       server:

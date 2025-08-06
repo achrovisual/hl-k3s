@@ -1,4 +1,5 @@
 base-template:
+  fullnameOverride: portfolio
   monitoring:
     logs:
       enabled: true
@@ -8,7 +9,7 @@ base-template:
     pullPolicy: IfNotPresent
   service:
     port: 3000
-    type: LoadBalancer
+    type: ClusterIP
   env:
     secretEnv:
       enabled: true
