@@ -1,0 +1,7 @@
+apiVersion: v2
+name: nginx
+version: 1.0.0
+dependencies:
+  - name: open-webui
+    version: 7.2.0
+    repository: https://helm.openwebui.com/

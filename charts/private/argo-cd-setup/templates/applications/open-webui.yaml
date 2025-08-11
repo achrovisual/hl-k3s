@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: open-webui
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: hl-cu
+  source:
+    repoURL: https://github.com/achrovisual/hl-k3s
+    path: charts/private/open-webui
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: open-webui
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
