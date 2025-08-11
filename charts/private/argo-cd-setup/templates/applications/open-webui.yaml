@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/achrovisual/hl-k3s
     path: charts/private/open-webui
-    targetRevision: HEAD
+    targetRevision: feature/set-up-open-webui
   destination:
     server: https://kubernetes.default.svc
     namespace: open-webui
