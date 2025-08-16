@@ -11,7 +11,7 @@ spec:
     path: charts/private/portfolio
     targetRevision: HEAD
   destination:
-    server: https://kubernetes.default.svc
+    server: {{ .Values.clusters.dev.server }}
     namespace: achrovisual
   syncPolicy:
     automated:

@@ -11,7 +11,7 @@ spec:
     path: charts/private/otel-collector
     targetRevision: HEAD
   destination:
-    server: https://kubernetes.default.svc
+    server: {{ .Values.clusters.dev.server }}
     namespace: otel-collector
   syncPolicy:
     automated:
