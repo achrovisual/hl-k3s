@@ -5,7 +5,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: hl-cu
+  project: hl-dev
   source:
     repoURL: https://github.com/achrovisual/hl-k3s
     path: charts/private/otel-collector
