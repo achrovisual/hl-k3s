@@ -10,13 +10,13 @@ base-template:
   service:
     port: 3000
     type: ClusterIP
-  # env:
-  #   secretEnv:
-  #     enabled: true
-  #     name: github-credentials
-  #     mappings:
-  #       GH_API_TOKEN: GH_API_TOKEN
-  #       GH_USERNAME: GH_USERNAME
+  env:
+    secretEnv:
+      enabled: true
+      name: github-credentials
+      mappings:
+        GH_API_TOKEN: GH_API_TOKEN
+        GH_USERNAME: GH_USERNAME
   livenessProbe:
     httpGet:
       path: /api/status
