@@ -1,0 +1,3 @@
+clusters:
+  dev:
+    server: "https://<your-dev-cluster-api-server-url>" # The dev cluster API server URL.
