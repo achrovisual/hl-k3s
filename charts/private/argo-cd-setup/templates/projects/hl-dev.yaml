@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: hl-cu
+  name: hl-dev
   namespace: argo-cd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,7 +10,7 @@ spec:
     - "*"
   destinations:
     - namespace: "*"
-      server: https://kubernetes.default.svc
+      server: {{ .Values.clusters.dev.server }}
   clusterResourceWhitelist:
     - group: "*"
       kind: "*"
