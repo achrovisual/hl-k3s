@@ -1,8 +1,0 @@
-apiVersion: v2
-name: metallb-setup
-description: A Helm chart for Kubernetes
-type: application
-sources:
-  - https://github.com/achrovisual/hl-k3s
-version: 0.1.0
-appVersion: "1.16.0"
