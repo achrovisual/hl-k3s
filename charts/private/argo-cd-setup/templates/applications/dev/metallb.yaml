@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/achrovisual/hl-k3s
     path: charts/private/metallb
-    targetRevision: feature/dev-cluster-nginx
+    targetRevision: HEAD
     helm:
       valueFiles:
         - values.yaml
