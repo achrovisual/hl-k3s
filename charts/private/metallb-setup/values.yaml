@@ -9,4 +9,4 @@ fullnameOverride: ""
 # This is for defining the address pool to be used by MetalLB.
 addressPool:
   name: "metallb-pool"
-  ipRange: "172.16.4.201-172.16.4.254"
+  ipRange: "172.16.4.201-172.16.4.210"
