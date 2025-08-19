@@ -3,3 +3,4 @@ metallb:
 addressPool:
   name: "metallb-pool"
   ipRange: "172.16.4.201-172.16.4.210"
+  

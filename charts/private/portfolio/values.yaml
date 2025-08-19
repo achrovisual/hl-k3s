@@ -36,3 +36,4 @@ base-template:
 github:
   username: <GITHUB_USERNAME> # Required: The GitHub account username.
   apiToken: <GITHUB_API_TOKEN> # Required: The GitHub API token.
+  
