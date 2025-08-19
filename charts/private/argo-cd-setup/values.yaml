@@ -1,3 +1,11 @@
 clusters:
+  # Development environment cluster configuration.
   dev:
-    server: "https://<your-dev-cluster-api-server-url>" # The dev cluster API server URL.
+    # The Kubernetes API server URL for the development cluster.
+    # This value is required for connecting to the cluster.
+    server: "https://<DEV_CLUSTER_API_SERVER_URL>"
+  # Production environment cluster configuration.
+  # This section can be uncommented and configured when you are ready to deploy to production.
+  # prod:
+    # server: "https://<PROD_CLUSTER_API_SERVER_URL>"
+    

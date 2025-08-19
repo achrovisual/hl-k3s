@@ -1,18 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: nginx-dev
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: hl-cu
+  project: hl-dev
   source:
     repoURL: https://github.com/achrovisual/hl-k3s
-    path: charts/private/cert-manager
+    path: charts/private/nginx
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
   destination:
-    server: https://kubernetes.default.svc
-    namespace: cert-manager
+    server: {{ .Values.clusters.dev.server }}
+    namespace: nginx
   syncPolicy:
     automated:
       selfHeal: true
