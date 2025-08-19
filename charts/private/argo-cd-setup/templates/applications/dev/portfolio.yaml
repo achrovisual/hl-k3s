@@ -10,6 +10,10 @@ spec:
     repoURL: https://github.com/achrovisual/hl-k3s
     path: charts/private/portfolio
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
   destination:
     server: {{ .Values.clusters.dev.server }}
     namespace: achrovisual
@@ -19,3 +23,4 @@ spec:
       prune: true
     syncOptions:
       - CreateNamespace=true
+

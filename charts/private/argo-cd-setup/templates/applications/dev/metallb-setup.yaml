@@ -10,6 +10,10 @@ spec:
     repoURL: https://github.com/achrovisual/hl-k3s
     path: charts/private/metallb-setup
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
   destination:
     server: {{ .Values.clusters.dev.server }}
     namespace: metallb
