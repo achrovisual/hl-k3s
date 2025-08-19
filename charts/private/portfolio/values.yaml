@@ -34,5 +34,5 @@ base-template:
     timeoutSeconds: 3
     failureThreshold: 1
 github:
-  username: github-user # The GitHub account username
-  apiToken: api-token # The GitHub API token for the account
+  username: <GITHUB_USERNAME> # Required: The GitHub account username.
+  apiToken: <GITHUB_API_TOKEN> # Required: The GitHub API token.
