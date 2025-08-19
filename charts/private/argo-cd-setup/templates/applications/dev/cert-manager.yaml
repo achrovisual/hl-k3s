@@ -1,18 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: portfolio
+  name: cert-manager-dev
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
-  project: hl-cu
+  project: hl-dev
   source:
     repoURL: https://github.com/achrovisual/hl-k3s
-    path: charts/private/portfolio
+    path: charts/private/cert-manager
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-dev.yaml
   destination:
-    server: https://kubernetes.default.svc
-    namespace: achrovisual
+    server: {{ .Values.clusters.dev.server }}
+    namespace: cert-manager
   syncPolicy:
     automated:
       selfHeal: true

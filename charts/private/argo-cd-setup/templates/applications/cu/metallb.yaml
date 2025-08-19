@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metallb
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: hl-cu
+  source:
+    repoURL: https://github.com/achrovisual/hl-k3s
+    path: charts/private/metallb
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: metallb
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true

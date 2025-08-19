@@ -3,6 +3,8 @@ kind: L2Advertisement
 metadata:
   name: {{ printf "%s-l2" .Values.addressPool.name }}
   namespace: "{{ .Values.namespace }}"
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   ipAddressPools:
   - "{{ .Values.addressPool.name }}"
