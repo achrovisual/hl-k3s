@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/achrovisual/hl-k3s
     path: charts/private/otel-collector
-    targetRevision: HEAD
+    targetRevision: feature/dev-cluster-nginx
     helm:
       valueFiles:
         - values.yaml
