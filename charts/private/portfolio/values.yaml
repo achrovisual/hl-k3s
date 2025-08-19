@@ -33,3 +33,6 @@ base-template:
     periodSeconds: 300
     timeoutSeconds: 3
     failureThreshold: 1
+github:
+  username: github-user # The GitHub account username
+  apiToken: api-token # The GitHub API token for the account
