@@ -11,3 +11,5 @@ open-webui:
     enabled: false
   pipelines:
     enabled: false
+  service:
+    containerPort: 80
