@@ -7,6 +7,5 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   url: https://helm.openwebui.com/
-  project: hl-cu
   name: open-webui
   type: helm
