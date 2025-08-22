@@ -9,3 +9,5 @@ open-webui:
     tls: true
   ollama:
     enabled: false
+  pipelines:
+    enabled: false
