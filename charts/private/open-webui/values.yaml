@@ -1,12 +1,12 @@
 open-webui:
-  ingress:
-    enabled: true
-    class: "nginx"
-    annotations:
-      cert-manager.io/cluster-issuer: lets-encrypt-prod
-      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    host: "open-webui.achrovisual.net"
-    tls: true
+  # ingress:
+  #   enabled: true
+  #   class: "nginx"
+  #   annotations:
+  #     cert-manager.io/cluster-issuer: lets-encrypt-prod
+  #     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+  #   host: "open-webui.achrovisual.net"
+  #   tls: true
   ollama:
     enabled: false
   pipelines:
