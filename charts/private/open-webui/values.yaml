@@ -3,5 +3,7 @@ open-webui:
     enabled: false
   pipelines:
     enabled: false
-  ollamaUrls:
-  - <OLLAMA_URL> # Required: The Ollama server URL.
+  ollamaUrls: []
+  # Populate when pointing Open WebUI at an existing Ollama instance, e.g.:
+  # - http://ollama.ollama-namespace.svc.cluster.local:11434
+  
