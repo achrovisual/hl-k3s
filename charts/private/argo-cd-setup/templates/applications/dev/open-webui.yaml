@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: open-webui-dev
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: hl-dev
+  source:
+    repoURL: https://github.com/achrovisual/hl-k3s
+    path: charts/private/open-webui
+    targetRevision: HEAD
+  destination:
+    server: {{ .Values.clusters.dev.server }}
+    namespace: open-webui
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+    retry:
+      limit: 2
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m

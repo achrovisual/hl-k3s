@@ -6,6 +6,5 @@ metadata:
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
-  url: achrovisual.github.io/hl-k3s
-  project: hl-cu
+  url: https://achrovisual.github.io/hl-k3s
   name: hl-k3s
