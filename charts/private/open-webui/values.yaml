@@ -7,6 +7,5 @@ open-webui:
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     host: "open-webui.achrovisual.net"
     tls: true
-  extraEnv:
-  - name: OLLAMA_BASE_URL
-    value: "http://{{ .Values.ollamaHostIp }}:11434"
+  ollama:
+    enabled: false
