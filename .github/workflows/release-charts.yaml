@@ -40,7 +40,19 @@ jobs:
       - name: Set Target Chart Environment Variable
         run: echo "TARGET_CHARTS=base-template" >> "$GITHUB_ENV"
 
+      - name: Check for changes in charts/public
+        id: check_changes
+        run: |
+          if git diff --name-only ${{ github.sha }} HEAD -- charts/public | grep . ; then
+            echo "Changes detected in charts/public"
+            HAS_CHANGES=true
+          else
+            echo "No changes detected in charts/public"
+            HAS_CHANGES=false
+          fi
+
       - name: Run Chart Releaser Action
+        if: steps.check_changes.outputs.HAS_CHANGES == 'true'
         uses: helm/chart-releaser-action@v1.7.0
         with:
           charts_dir: charts/public
@@ -48,15 +60,9 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           CR_RELEASE_NOTES_FILE: ${{ steps.extract_changelog.outputs.release_notes_file }}
-
-      - name: Login to GitHub Container Registry (GHCR)
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
+          
       - name: Push Charts to GHCR
+        if: steps.check_changes.outputs.HAS_CHANGES == 'true'
         shell: bash
         run: |
           shopt -s nullglob
