@@ -1,4 +1,11 @@
 {{/*
+The short name of the chart.
+*/}}
+{{- define "open-webui.shortname" -}}
+{{- printf "%s" "open-webui" -}}
+{{- end -}}
+
+{{/*
 Expand the name of the chart.
 */}}
 {{- define "open-webui.fullname" -}}
