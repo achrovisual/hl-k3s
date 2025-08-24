@@ -8,3 +8,7 @@ open-webui:
   # - http://ollama.ollama-namespace.svc.cluster.local:11434
 service:
   port: 80
+ingress:
+  enabled: true
+  # Replace with your desired hostname
+  host: open-webui.your-domain.com
