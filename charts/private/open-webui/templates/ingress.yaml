@@ -20,6 +20,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: open-webui
+                name: {{ include "open-webui.fullname" . }}
                 port:
-                  number: 80
+                  number: {{ .Values.service.port }}
