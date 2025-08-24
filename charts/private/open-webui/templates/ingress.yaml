@@ -21,7 +21,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ include "open-webui.fullname" $ }}
+                name: {{ include "open-webui.shortname" . }}
                 port:
                   number: {{ $.Values.service.port }}
 {{- end -}}
