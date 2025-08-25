@@ -1,4 +1,6 @@
 open-webui:
+  ingress:
+    enabled: false
   ollama:
     enabled: false
   pipelines:
@@ -6,4 +8,14 @@ open-webui:
   ollamaUrls: []
   # Populate when pointing Open WebUI at an existing Ollama instance, e.g.:
   # - http://ollama.ollama-namespace.svc.cluster.local:11434
+service:
+  port: 80
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: lets-encrypt-prod
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+  className: nginx
+  # Replace with your desired hostname
+  host: open-webui.your-domain.com
   
