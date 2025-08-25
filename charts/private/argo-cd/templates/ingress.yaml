@@ -1,25 +1,28 @@
+{{- if .Values.ingress.enabled -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: argo-cd-server-ingress
+  name: argo-cd-ingress
   namespace: argo-cd
   annotations:
-    cert-manager.io/cluster-issuer: lets-encrypt-prod
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    {{- if .Values.ingress.annotations }}
+    {{ toYaml .Values.ingress.annotations | nindent 4 }}
+    {{- end }}
 spec:
-  ingressClassName: nginx
+  ingressClassName: {{ .Values.ingress.className | default "nginx" }}
   tls:
     - hosts:
-        - argo-cd.achrovisual.net
-      secretName: argo-cd-server-tls-secret
+        - {{ .Values.ingress.host }}
+      secretName: argo-cd-tls-secret
   rules:
-    - host: argo-cd.achrovisual.net
+    - host: {{ .Values.ingress.host }}
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: argo-cd-server
+                name: {{ include "hl-k3s.argo-cd.shortname" . }}
                 port:
-                  number: 80
+                  number: {{ $.Values.service.port }}
+{{- end -}}
