@@ -22,7 +22,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ include "hl-k3s.argo-cd.shortname" . }}
+                name: {{ printf "%s-server" (include "hl-k3s.argo-cd.shortname" .) }}
                 port:
                   number: {{ $.Values.service.port }}
 {{- end -}}
