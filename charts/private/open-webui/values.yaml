@@ -1,4 +1,6 @@
 open-webui:
+  ingress:
+    enabled: false
   ollama:
     enabled: false
   pipelines:
