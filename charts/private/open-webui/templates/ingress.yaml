@@ -8,7 +8,7 @@ metadata:
     cert-manager.io/cluster-issuer: lets-encrypt-prod
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
-  ingressClassName: nginx
+  ingressClassName: {{ .Values.ingress.className | default "nginx" }}
   tls:
     - hosts:
         - {{ .Values.ingress.host }}

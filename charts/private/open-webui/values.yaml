@@ -12,6 +12,7 @@ service:
   port: 80
 ingress:
   enabled: true
+  className: nginx
   # Replace with your desired hostname
   host: open-webui.your-domain.com
   
