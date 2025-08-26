@@ -1,25 +1,28 @@
+{{- if .Values.ingress.enabled -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: portfolio-ingress
-  namespace: achrovisual
+  namespace: portfolio
   annotations:
-    cert-manager.io/cluster-issuer: lets-encrypt-prod
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    {{- if .Values.ingress.annotations }}
+    {{ toYaml .Values.ingress.annotations | nindent 4 }}
+    {{- end }}
 spec:
-  ingressClassName: nginx
+  ingressClassName: {{ .Values.ingress.className | default "nginx" }}
   tls:
     - hosts:
-        - portfolio.achrovisual.net
+        - {{ .Values.ingress.host }}
       secretName: portfolio-tls-secret
   rules:
-    - host: portfolio.achrovisual.net
+    - host: {{ .Values.ingress.host }}
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: portfolio
+                name: {{ include "hl-k3s.portfolio.shortname" . }}
                 port:
-                  number: 3000
+                  number: {{ $.Values.service.port }}
+{{- end -}}

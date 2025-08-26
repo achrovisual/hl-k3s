@@ -36,4 +36,14 @@ base-template:
 github:
   username: <GITHUB_USERNAME> # Required: The GitHub account username.
   apiToken: <GITHUB_API_TOKEN> # Required: The GitHub API token.
+service:
+  port: 3000
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: lets-encrypt-prod
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+  className: nginx
+  # Replace with your desired hostname
+  host: portfolio.your-domain.com
   
