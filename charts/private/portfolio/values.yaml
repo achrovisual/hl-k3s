@@ -5,7 +5,7 @@ base-template:
       enabled: true
   image:
     repository: ghcr.io/achrovisual/portfolio
-    tag: sha-875f9d30d6c352be935315806bca5bc012a28986
+    tag: sha-0b725e9ff1237360d37e4eb9f63b02831cb699b0
     pullPolicy: IfNotPresent
   service:
     port: 3000
