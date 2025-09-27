@@ -15,6 +15,7 @@ spec:
     namespace: open-webui
   syncPolicy:
     automated:
+      enabled: false
       selfHeal: true
       prune: true
     syncOptions:
