@@ -1,5 +1,8 @@
 penpot:
   fullnameOverride: penpot
+  config:
+    # Replace with your desired hostname
+    publicUri: penpot.your-domain.com
 service:
   port: 8080
 ingress:
