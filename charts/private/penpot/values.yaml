@@ -1,3 +1,5 @@
+penpot:
+  fullnameOverride: penpot
 service:
   port: 8080
 ingress:
