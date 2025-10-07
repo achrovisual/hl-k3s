@@ -1,4 +1,7 @@
 penpot:
+  global:
+    postgresqlEnabled: true
+    valkeyEnabled: true
   fullnameOverride: penpot
   config:
     # Replace with your desired hostname
