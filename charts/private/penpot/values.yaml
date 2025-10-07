@@ -6,6 +6,9 @@ penpot:
   config:
     # Replace with your desired hostname
     publicUri: penpot.your-domain.com
+  backend:
+    startupProbe:
+      failureThreshold: 60
 service:
   port: 8080
 ingress:
