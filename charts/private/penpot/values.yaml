@@ -1,0 +1,21 @@
+penpot:
+  global:
+    postgresqlEnabled: true
+    valkeyEnabled: true
+  fullnameOverride: penpot
+  config:
+    # Replace with your desired hostname
+    publicUri: penpot.your-domain.com
+  backend:
+    startupProbe:
+      failureThreshold: 60
+service:
+  port: 8080
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: lets-encrypt-prod
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+  className: nginx
+  # Replace with your desired hostname
+  host: penpot.your-domain.com
