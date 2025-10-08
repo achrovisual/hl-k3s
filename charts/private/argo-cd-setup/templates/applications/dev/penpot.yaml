@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/achrovisual/hl-k3s
     path: charts/private/penpot
-    targetRevision: feature/set-up-penpot
+    targetRevision: main
   destination:
     server: {{ .Values.clusters.dev.server }}
     namespace: penpot
